@@ -3,7 +3,7 @@
 		boot =
 			// zero to many scripts to load a configuration and/or loader.
 			// i.e. path-to-util/doh/runner.html?boots=path-to/config.js,path-to/require.js
-			["../../dojo/dojo.js"],
+			["../../dojo/requirejs/require.js"],
 
 		standardDojoBoot = boot,
 
@@ -176,8 +176,13 @@
 		};
 	}else{
 		config= {
+			baseUrl: "../..",
 			paths: paths,
-			deps: ["dojo/domReady", "doh"],
+			packages: [
+				{ name: 'doh', location: 'util/doh' }
+			],
+			deps: ["dojo/domReady", "doh/main"],
+			tlmSiblingOfDojo: false,
 			callback: function(domReady, doh){
 				domReady(function(){
 					doh._fixHeight();
@@ -187,7 +192,7 @@
 					});
 				});
 			},
-			async: async,
+			async: true,
 			isDebug: 1
 		};
 	}
