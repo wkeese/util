@@ -3,7 +3,7 @@
 		boot =
 			// zero to many scripts to load a configuration and/or loader.
 			// i.e. path-to-util/doh/runner.html?boots=path-to/config.js,path-to/require.js
-			["../../dojo/dojo.js"],
+			["../../dojo/requirejs/require.js"],
 
 		standardDojoBoot = boot,
 
