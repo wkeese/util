@@ -176,18 +176,10 @@
 		};
 	}else{
 		config= {
-			// override non-standard behavior of V1 dojo.js, which sets baseUrl to dojo dir
 			baseUrl: "../..",
-			tlmSiblingOfDojo: false,
-
 			paths: paths,
 			packages: [
-				{ name: 'doh', location: 'util/doh' },
-
-				// override non-standard behavior of V1 dojo.js, which remaps these packages
-				'dojo',
-				'dijit',
-				'dojox'
+				{ name: 'doh', location: 'util/doh' }
 			],
 			deps: ["dojo/domReady", "doh/main"],
 			callback: function(domReady, doh){
